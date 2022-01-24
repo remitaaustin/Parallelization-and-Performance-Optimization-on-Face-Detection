@@ -2,11 +2,11 @@
 Parallel and Distributed Computing (CSE4001) J Component
 
 ## Steps to be followed:
-##### 1. Loading required tools and libraries:
+#### 1. Loading required tools and libraries:
 Load the required libraries in Python, namely pillow (it supports the opening, manipulating, and saving of many different image file formats), scipy (for image processing), time (for computing the execution time), cv2 (for image processing and performing computer vision tasks). Also, load the Haar cascade model to identify faces in an image or a real-time video.
-##### 2. Defining function to capture the image:
+#### 2. Defining function to capture the image:
 We define the function to capture a real-time image using JavaScript and create the elements. The element created is resized, and a capture button is created next to the video stream. Then, when the Capture button is clicked, we save the captured image as a jpeg file - which we will read using imread. Lastly, we return the filename.
-##### 3. Real-time Face Detection:
+#### 3. Real-time Face Detection:
 Initially, we find the number of cores on the system and use that to find how many we can use for Thread Execution. After taking two real-time photos and saving them as jpegs, we can use the imread() function to read them both into a variable. By iterating through the pixels in the image, we use the haar cascade classifier to find the rectangular areas where the face detection algorithm classifier has found or detected faces in the captured images. To calculate the time taken, we use time functions and create variables for the same. Calculation of grayscale is done for both the images - where for parallel execution processing, we use thread executor to speed up the process, whereas for serial, we use a simple for loop. After writing these grayscale images into jpeg formats and resizing them, we can proceed to normalize and find the difference in the image pixels and compare the images to find whether the person/face is present in the images, are the same person or not based on the difference percentage. Finally, we calculate the time taken for the above execution and print the results.
-##### 4. Face Detection of Image Files:
+#### 4. Face Detection of Image Files:
 We perform face detection on images from a database, as opposed to the capturing of images in real-time. Using imread, we load the images into variables, and using the haar cascade classifier, we iterate over the pixels in those images and find the region of interest (ROI) or the rectangular areas that are most likely to have faces. Afterward, as before - we perform thread execution for parallel processing of the images to obtain grayscale images and without threads for serial execution. Then, by normalization and comparing the image pixels, we find if the uploaded images contain the face of the same person or not and calculate the execution time and speedup.
